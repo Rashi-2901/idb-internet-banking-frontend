@@ -76,7 +76,7 @@ body {
   content: '^';
   position: absolute;
   top: -14px; /* Adjust the position above the box */
-  left: 50%;
+  left: 80%;
   transform: translateX(-50%);
   font-size: 20px; /* Adjust size of the caret */
   color: #33333330; /* Adjust the color of the caret */
