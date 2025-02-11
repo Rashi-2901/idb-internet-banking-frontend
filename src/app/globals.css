@@ -36,7 +36,7 @@ body {
     --primary-300: 96 9% 94%;
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 34%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -70,4 +70,15 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.custom-dropdown::before {
+  content: '^';
+  position: absolute;
+  top: -14px; /* Adjust the position above the box */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px; /* Adjust size of the caret */
+  color: #33333330; /* Adjust the color of the caret */
+  display: block;
 }

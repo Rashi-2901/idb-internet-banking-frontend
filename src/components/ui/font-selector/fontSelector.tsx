@@ -8,8 +8,6 @@ import {
     DropdownMenuTrigger
 } from "@/components/ui/dropdown/dropdown-menu"
 import { Button } from "../button";
-import Image from "next/image";
-import greaterThan from '../../../assets/greater-than.svg'
 
 type fontType = {
     label: string;
@@ -35,7 +33,6 @@ export default function FontSelector() {
                         {activeFont}
                     </Button>
                 </DropdownMenuTrigger>
-                <div><Image src={greaterThan} alt='greater-than' className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-500"/></div>
                 <DropdownMenuContent>
                     <div className="dropdown-content">
                         {fonts.map((font) => {
@@ -49,12 +46,6 @@ export default function FontSelector() {
                         })}
                     </div>
                 </DropdownMenuContent>
-
-                {/* Custom caret (^) */}
-                {/* <span
-        className="absolute w-2 h-2 bg-inherit rotate-45 border box-border z-0 border-gray-200 border-r-0 border-b-0"
-        style={{ left: '50%', top: '-8px', transform: 'translateX(-50%)' }}
-      ></span> */}
             </div>
         </DropdownMenu>
     )

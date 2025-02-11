@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -25,7 +25,6 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({ options }) => {
   const [rotation, setRotation] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [selected, setSelected] = useState<Option>(options[0]);
-  const inputRef = useRef(null);
   
   const toggleRotation = () => {
     setRotation((prevState) => !prevState); // Toggle the rotation state
@@ -34,13 +33,7 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({ options }) => {
   const handleCountry = (option: Option) => {
     setSelected(option); //to be continued
     setRotation(false);
-  };
-
-  const handleInputChange = (e) => {
-    setSearchValue(e.target.value); // Update search value
-    if (inputRef.current) {
-      inputRef.current.focus(); // Keep input focused continuously
-    }
+    setSearchValue('');
   };
 
   // Filter options based on search input
@@ -69,11 +62,11 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({ options }) => {
             {/* Display search box */}
             <div className="relative p-2">
               <Input
-                ref={inputRef}
                 type="text"
                 placeholder= "Search..."               
                 value={searchValue}
-                onChange={handleInputChange}
+                onChange={(e) => {
+                setSearchValue(e.target.value)}}
                 className="h-8 pl-6 z-10"
               />
               <Image

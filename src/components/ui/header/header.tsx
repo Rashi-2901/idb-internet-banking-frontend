@@ -137,7 +137,7 @@ const Header = (props: PropsType) => {
         <div className="dropdown-content flex gap-2">
           <span >{activeLanguage.code}</span>
           <DropdownMenuTrigger>
-            <button onClick={toggleRotate} className={`h-3.5 w-2.5 flex items-center transition-transform duration-300 transform ${rotated ? 'rotate-180' : ""}`}>
+            <button onClick={toggleRotate} className={`h-3.5 w-2.5 border-0 flex items-center transition-transform duration-300 transform ${rotated ? 'rotate-180' : ""}`}>
               <Image src={logo} alt='dropdown' className="h-3.5 w-2.5" />
             </button>
           </DropdownMenuTrigger>
